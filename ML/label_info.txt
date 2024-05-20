@@ -1,0 +1,26 @@
+
+Labels
+------
+
+0 - Distraction
+1 - Normal
+
+
+
+
+
+
+
+State Farm Dataset
+------------------
+
+c0: safe driving (1)
+c1: texting - right (0)
+c2: talking on the phone - right (0)
+c3: texting - left (0)
+c4: talking on the phone - left (0)
+#c5: operating the radio
+c6: drinking (0)
+#c7: reaching behind
+#c8: hair and makeup
+#c9: talking to passenger

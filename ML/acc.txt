@@ -1,0 +1,2 @@
+model_acc - 99% (test dataset) (mobilenet)
+model_acc - 95% (test dataset) (vgg)

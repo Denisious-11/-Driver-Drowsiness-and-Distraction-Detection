@@ -1,0 +1,17 @@
+
+**********Driving Report**********
+
+Starting Time : 09:41:40
+Starting Latitude : 9.875
+Starting Longitude : 76.567
+Starting Place : Oliyapuram, Muvattupuzha, Ernakulam district, Kerala, 686662, India
+
+Distraction Detected Time : 09:42:23
+Distraction Detected Latitude : 9.875
+Distraction Detected Longitude : 76.567
+Distraction Detected Place : Oliyapuram, Muvattupuzha, Ernakulam district, Kerala, 686662, India
+
+Drowsiness Detected Time : 09:42:41
+Drowsiness Detected Latitude : 9.875
+Drowsiness Detected Longitude : 76.567
+Drowsiness Detected Place : Oliyapuram, Muvattupuzha, Ernakulam district, Kerala, 686662, India

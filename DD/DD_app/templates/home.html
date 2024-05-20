@@ -1,0 +1,266 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>FocusFinder</title>
+        
+<!-- 
+
+Sentra Template
+
+https://templatemo.com/tm-518-sentra
+
+-->
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/fontAwesome.css' %}">
+        <link rel="stylesheet" href="{% static 'css/light-box.css' %}">
+        <link rel="stylesheet" href="{% static 'css/owl-carousel.css' %}">
+        <link rel="stylesheet" href="{% static 'css/templatemo-style.css' %}">
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+
+        <script src="{% static 'js/vendor/modernizr-2.8.3-respond-1.4.2.min.js' %}"></script>
+        <script src="{% static 'js_1/jquery2.0.3.min.js' %}"></script>
+        <link rel="stylesheet" href="{% static 'datatable/jquery.dataTables.min.css' %}">
+        <script type="text/javascript" src="{% static 'datatable/jquery.dataTables.min.js' %}"></script>
+
+        <script type="text/javascript" src="{% static 'datatable/bootstable.min.js' %}"></script>
+
+        <script type="text/javascript">
+        
+            $(document).ready(function(){
+
+                $('#table').DataTable();
+            })
+        </script>
+    </head>
+
+<body>
+
+
+
+        <header class="nav-down responsive-nav hidden-lg hidden-md">
+            <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!--/.navbar-header-->
+            <div id="main-nav" class="collapse navbar-collapse">
+                <nav>
+                    <ul class="nav navbar-nav">
+                        <li><a href="#Home">Home</a></li>
+                        <li><a href="#Demo">Demo</a></li>
+                        <li><a href="#Fleet">Fleet Analysis</a></li>
+                        <!-- <li> -->
+                            
+                        <!-- </li> -->
+                    </ul>
+                    
+                </nav>
+                <a href="{% url 'logout' %}" style="margin-left: 30px;">Logout</a>
+            </div>
+        </header>
+
+        <div class="sidebar-navigation hidde-sm hidden-xs">
+            <div class="logo">
+                <a href="#" style="color: yellow;">Focus<em>Finder</em></a>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#Home">
+                            <span class="rect"></span>
+                            <span class="circle"></span>
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#Demo">
+                            <span class="rect"></span>
+                            <span class="circle"></span>
+                            Demo
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#Fleet">
+                            <span class="rect"></span>
+                            <span class="circle"></span>
+                            Fleet Analysis
+                        </a>
+                    </li>
+                    <!-- <li> -->
+                       
+                    <!-- </li> -->
+                </ul>
+
+            </nav><br>
+            <a href="{% url 'logout' %}" style="margin-left: 60px;color: darkred;margin-top: 300px;">
+                            <b>Logout</b>
+                        </a>
+        </div>
+
+        <div class="slider">
+            <div class="Modern-Slider content-section" id="Home">
+                <!-- Item -->
+                <div class="item item-1">
+                    <div class="img-fill">
+                    <div class="image"></div>
+                    <div class="info">
+                        <div>
+                          <h1>Welcome Homepage</h1>
+                          <p>"Keep calm and drive safely."</p>
+                       
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- // Item -->
+                <!-- Item -->
+                <div class="item item-2">
+                    <div class="img-fill">
+                        <div class="image"></div>
+                        <div class="info">
+                        <div>
+                          <h1>Welcome Homepage</h1>
+                          <p>"Faster is fatal, slower is safe."</p>
+                          
+                        
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- // Item -->
+               
+            </div>
+        </div>
+
+
+        <div class="page-content">
+            <section id="Demo" class="content-section" style="background-color: lightgray;">
+                <h1 style="color: darkviolet;"><b>Capture<br><em>Live Video Footage Here</em></b></h1>
+                <form class="row contact_us_form" action="{% url 'webcam' %}" method="post"  enctype='multipart/form-data'>{% csrf_token %}
+                   <div>
+                        <input type="submit" id="b1" value="Start" class="btn btn-info" style="margin-top:100px;">
+                    </div>
+                     
+                </form>
+                <form class="row contact_us_form" action="{% url 'gen' %}" method="post"  enctype='multipart/form-data'>{% csrf_token %}
+                    <div>
+                        <input type="submit" id="b1" value="Generate Fleet Analysis" class="btn btn-success" style="margin-top:100px;">
+                    </div>
+                </form>
+                <div style="margin-top: 315px;"></div>
+            </section>
+
+
+
+            <section id="Fleet" class="content-section">
+                <h1 style="color: darkviolet;"><b><em>Fleet Analysis Details</em></b></h1>
+                <div style="margin-top: 75px;"></div>
+                    <div class='table-condensed container-fluid'>
+                      <table class="table table-bordered b-t b-light" id="table">
+                        <thead>
+                          <tr>
+                            <th>File ID</th>
+                            <th>Filename</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Download</th>
+                         </tr>
+                        </thead>
+                        <tbody>
+
+                            {% for i in files %}
+
+                              <tr>
+                                <form action="{% url 'download' %}" method="POST">
+                                    {% csrf_token %}
+                                    <td id="f_id">{{i.f_id}}<input type="text" name="f_id"  value="{{i.f_id}}" hidden></td>
+
+                                    <td data-search="{{i.filename}}" data-filer="{{i.filename}}">{{i.filename}}<input type="text" name="filename" id="filename" value="{{i.filename}}" hidden></td>
+
+                                    <td>{{i.c_date}}<input type="text" name="c_date" value="{{i.c_date}}" hidden></td>
+
+                                    <td >{{i.c_time}}<input type="text" name="c_time" value="{{i.c_time}}" hidden></td>
+                                    <td ><input type="submit" name="download" value="Download"></td>
+                                </form>
+                              </tr>
+
+                            {% endfor %}
+                         
+                          
+                        </tbody>
+                      </table>
+                    </div>
+                <div style="margin-top: 255px;"></div>      
+            </section>
+            
+            <section class="footer">
+                <p>Copyright &copy; 2019 Company Name 
+                
+                . Design: <a href="{% url 'refresh' %}">Refresh all</p>
+            </section>
+        </div>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+    <script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+    
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+    <script>
+        // Hide Header on on scroll down
+        var didScroll;
+        var lastScrollTop = 0;
+        var delta = 5;
+        var navbarHeight = $('header').outerHeight();
+
+        $(window).scroll(function(event){
+            didScroll = true;
+        });
+
+        setInterval(function() {
+            if (didScroll) {
+                hasScrolled();
+                didScroll = false;
+            }
+        }, 250);
+
+        function hasScrolled() {
+            var st = $(this).scrollTop();
+            
+            // Make sure they scroll more than delta
+            if(Math.abs(lastScrollTop - st) <= delta)
+                return;
+            
+            // If they scrolled down and are past the navbar, add class .nav-up.
+            // This is necessary so you never see what is "behind" the navbar.
+            if (st > lastScrollTop && st > navbarHeight){
+                // Scroll Down
+                $('header').removeClass('nav-down').addClass('nav-up');
+            } else {
+                // Scroll Up
+                if(st + $(window).height() < $(document).height()) {
+                    $('header').removeClass('nav-up').addClass('nav-down');
+                }
+            }
+            
+            lastScrollTop = st;
+        }
+    </script>
+
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script> -->
+
+</body>
+</html>
